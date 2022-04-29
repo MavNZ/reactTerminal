@@ -17,6 +17,9 @@ const commands = {
     fn: function() {
       return `${name} uses she/her pronouns`
     }
+
+    cred
+    
   }
 }
 
