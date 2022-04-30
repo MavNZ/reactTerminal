@@ -13,7 +13,7 @@ function App() {
     <Router>
       <div>
         <nav>
-          <div class="container space-around">
+          <div className="container space-around">
             <Link to="/">Home</Link>
             <Link to="/terminal1">Terminal</Link>
             <Link to="/terminal2">Terminal2</Link>

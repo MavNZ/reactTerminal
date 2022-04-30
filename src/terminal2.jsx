@@ -1,6 +1,7 @@
 import React from 'react';
 import Console from '@haensl/react-component-console';
 import Axios from 'axios'
+import './terminal2.css'
 
 class MyComponent extends React.Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class MyComponent extends React.Component {
   
   render() {
     return (
-      <div style={{maxWidth:200}}>
+      <div style={{maxWidth:"100vw"}}>
         <Console lines={this.state.lines}
           onFinishWritingLine={
             (line) => {
