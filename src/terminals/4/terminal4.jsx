@@ -15,7 +15,9 @@ export default class Terminal4 extends Component {
         "sleep 3000",
         "echo ola",
         "not found",
-      ]
+      ],
+      isPrideMode: false,
+      lineClassName: '.styles_line__1lhnu'
     }
   }
 
@@ -30,6 +32,7 @@ export default class Terminal4 extends Component {
           ref={this.terminal}
           autoFocus
           welcomeMessage="Welcome"
+          lineClassName={this.state.lineClassName}
           commands={{
             help: {
               description: 'Help',
@@ -46,8 +49,20 @@ export default class Terminal4 extends Component {
                   const fact = await fetchFact()
                   resolve(`${fact}`)
                 } catch (e) {
-                  reject(e)
+                  resolve(`${e}`)
                 }
+              })
+            },
+            pride: {
+              description: 'Sets pride mode',
+              fn: () => new Promise((resolve) => {
+                const newPrideMode = !this.state.isPrideMode
+                this.setState({
+                  isPrideMode: newPrideMode,
+                  lineClassName: newPrideMode ? 'rainbow-text' : '.styles_line__1lhnu'
+                })
+
+                resolve(`Font color changed`)
               })
             },
             history: {

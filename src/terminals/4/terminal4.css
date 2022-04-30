@@ -6,3 +6,11 @@
 .styles_line__1lhnu {
   white-space: pre-line;
 }
+
+.rainbow-text {
+  white-space: pre-line;
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red) !important;
+  color: transparent;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+}
