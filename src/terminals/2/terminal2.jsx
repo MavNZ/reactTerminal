@@ -1,6 +1,6 @@
 import React from 'react';
 import Console from '@haensl/react-component-console';
-import Axios from 'axios'
+import { fetchFact } from '../../utils'
 import './terminal2.css'
 
 class MyComponent extends React.Component {
@@ -21,10 +21,7 @@ class MyComponent extends React.Component {
   }  
 
   async fetchFact() {
-    const response = await Axios('https://uselessfacts.jsph.pl/random.json?language=en')
-    const line = response.data.text + '\nSource: ' + response.data.source
-    console.log(line)
-    
+    const line = await fetchFact()    
     this.setState({lines: [line]})
   }
   

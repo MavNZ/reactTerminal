@@ -1,5 +1,6 @@
 import React, { useState, Component } from 'react'
 import ReactConsole from '@webscopeio/react-console'
+import { fetchFact } from '../../utils'
 import './terminal4.css'
 
 export default class Terminal4 extends Component {
@@ -37,6 +38,17 @@ export default class Terminal4 extends Component {
                 const commands = Object.keys(this.terminal.current.props.commands).join('\n')
                 return new Promise(resolve => resolve(`${commands}`))
               }
+            },
+            fact: {
+              description: 'Get random fact',
+              fn: async () => new Promise(async (resolve, reject) => {
+                try {
+                  const fact = await fetchFact()
+                  resolve(`${fact}`)
+                } catch (e) {
+                  reject(e)
+                }
+              })
             },
             history: {
               description: 'History',
