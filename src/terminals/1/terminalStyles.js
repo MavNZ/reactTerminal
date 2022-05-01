@@ -40,7 +40,6 @@ export default {
     outline: 'none' // Fix for outline showing up on some browsers
   },
   rainbow_text: {
-    // 'white-space': 'pre-line',
     backgroundImage: 'linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red)',
     color: 'transparent',
     backgroundClip: 'text',
