@@ -1,14 +1,22 @@
 import React, { Component } from 'react'
 import Terminal from 'react-console-emulator'
+import sourceStyles from './terminalStyles'
 
 const name = 'Riley'
-
-
 
 export default class MyTerminal extends Component {
   constructor (props) {
     super(props)
     this.terminal = React.createRef()
+    this.prideMode = false
+    this.state = {
+      containerStyle: sourceStyles.container,
+      contentStyle:sourceStyles.content,
+      inputArea: sourceStyles.inputArea,
+      promptLabel: sourceStyles.promptLabel,
+      input: sourceStyles.input,
+      inputText: sourceStyles.inputText
+    }
   }
   
   commands = {
@@ -45,14 +53,35 @@ export default class MyTerminal extends Component {
     
         return `Username changed to ${name}`
       }
+    },
+
+    pride: {
+      description: 'toggles pride mode',
+      usage: 'pride',
+      fn: () => {
+        this.prideMode = !this.prideMode
+        this.setState({
+          contentStyle: this.prideMode ? 
+          {...sourceStyles.content, ...sourceStyles.rainbow_text} : sourceStyles.content
+        })
+
+        return `Pridemode ${this.prideMode ? 'enabled' : 'disabled'}`
+      }
     }
   }
   
   render () {
     return (
+      // <CustomTerminal
       <Terminal
         commands={this.commands}
         ref={this.terminal}
+        style={this.state.containerStyle}
+        contentStyle={this.state.contentStyle}
+        inputAreaStyle={this.state.inputArea}
+        promptLabelStyle={this.state.promptLabel}
+        inputStyle={this.state.input}
+        inputTextStyle={this.state.inputText}
         welcomeMessage={`Welcome to boolean44's website!`}
         promptLabel={`user@term:~$`}
         

@@ -1,7 +1,8 @@
 import React, { useState, Component } from 'react'
 import ReactConsole from '@webscopeio/react-console'
 import { fetchFact } from '../../utils'
-import './terminal4.css'
+
+import styles from './terminal4.css'
 
 export default class Terminal4 extends Component {
   constructor (props) {
@@ -17,7 +18,7 @@ export default class Terminal4 extends Component {
         "not found",
       ],
       isPrideMode: false,
-      lineClassName: '.styles_line__1lhnu'
+      lineClassName: 'styles_line__1lhnu',
     }
   }
 
@@ -44,7 +45,7 @@ export default class Terminal4 extends Component {
             },
             fact: {
               description: 'Get random fact',
-              fn: async () => new Promise(async (resolve, reject) => {
+              fn: async () => new Promise(async (resolve) => {
                 try {
                   const fact = await fetchFact()
                   resolve(`${fact}`)
@@ -59,10 +60,10 @@ export default class Terminal4 extends Component {
                 const newPrideMode = !this.state.isPrideMode
                 this.setState({
                   isPrideMode: newPrideMode,
-                  lineClassName: newPrideMode ? 'rainbow-text' : '.styles_line__1lhnu'
+                  lineClassName: newPrideMode ? 'rainbow_text' : 'styles_line__1lhnu'
                 })
 
-                resolve(`Font color changed`)
+                resolve(`Pride mode ${newPrideMode ? 'enabled' : 'disabled'}`)
               })
             },
             history: {
