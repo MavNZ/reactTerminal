@@ -72,20 +72,22 @@ export default class MyTerminal extends Component {
   
   render () {
     return (
-      // <CustomTerminal
-      <Terminal
-        commands={this.commands}
-        ref={this.terminal}
-        style={this.state.containerStyle}
-        contentStyle={this.state.contentStyle}
-        inputAreaStyle={this.state.inputArea}
-        promptLabelStyle={this.state.promptLabel}
-        inputStyle={this.state.input}
-        inputTextStyle={this.state.inputText}
-        welcomeMessage={`Welcome to boolean44's website!`}
-        promptLabel={`user@term:~$`}
-        
-      />
+      <div style={sourceStyles.wrapper}>
+        <Terminal
+          autoscroll
+          commands={this.commands}
+          ref={this.terminal}
+          style={this.state.containerStyle}
+          contentStyle={this.state.contentStyle}
+          inputAreaStyle={this.state.inputArea}
+          promptLabelStyle={this.state.promptLabel}
+          inputStyle={this.state.input}
+          inputTextStyle={this.state.inputText}
+          welcomeMessage={`Welcome to boolean44's website!`}
+          promptLabel={`user@term:~$`}
+          
+        />
+      </div>
     )
   }
 }

@@ -1,8 +1,7 @@
 export default {
   container: {
-    minHeight: '98.6vh',
-    // height: '50vh',
     maxWidth: '100%', // Fill parent before overflowing
+    minHeight: '100%',
     maxHeight: '100%', // Fill parent before overflowing
     borderRadius: '5px',
     overflow: 'auto',
@@ -46,5 +45,8 @@ export default {
     color: 'transparent',
     backgroundClip: 'text',
     WebkitBackgroundClip: 'text'
+  },
+  wrapper: {
+    height: '100vh'
   }
 }
