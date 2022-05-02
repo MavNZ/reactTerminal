@@ -5,6 +5,8 @@ export const config = {
   welcomeMessage: `Welcome to boolean44's website!`
 }
 
+
+
 export function commands() {
   return ({
     echo: {
@@ -23,12 +25,23 @@ export function commands() {
       }
     },
 
-    credits: {
-      description: "Displays app credits",
-      usage: 'credits',
-      fn: function () {
-        return '??'
-      },
+    dni: {
+      description: "shows people i'd prefer not to have contact me",
+      usage: "dni",
+      fn: function () { 
+        const arr = [
+          'endogenic systems',
+          'homophobe/transphobes',
+          'pedophiles/pedo-supporters',
+          'transmeds',
+          "people who infantalize disabled people", 
+          "toxic dream stans/dreamsexuals/dreamgender",
+          "zoophile/zophillia supporters",
+          
+        ]
+        
+        return arr.join('\n')
+      }
     },
 
     name: {
