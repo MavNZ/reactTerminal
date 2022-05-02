@@ -3,6 +3,25 @@ import Terminal from 'react-console-emulator'
 import sourceStyles from './terminalStyles'
 import { commands, config } from './config'
 
+class Term extends Terminal {
+  constructor(props) {
+    super(props)
+  }
+
+  showHelp = () => {
+    const { commands } = this.state
+
+    for (const c in commands) {
+      const cmdObj = commands[c]
+
+      if (!cmdObj.hidden) {
+        const usage = cmdObj.usage ? ` - ${cmdObj.usage}` : ''
+        this.pushToStdout(`${c} - ${cmdObj.description}${usage}`)
+      }
+    }
+  }
+}
+
 export default class MyTerminal extends Component {
   constructor(props) {
     super(props)
@@ -22,7 +41,7 @@ export default class MyTerminal extends Component {
   render() {
     return (
       <div style={sourceStyles.wrapper}>
-        <Terminal
+        <Term
           autoscroll
           commands={commands.call(this)}
           ref={this.terminal}

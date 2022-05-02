@@ -46,6 +46,6 @@ export default {
     WebkitBackgroundClip: 'text'
   },
   wrapper: {
-    height: '100vh'
+    height: '98.6vh'
   }
 }

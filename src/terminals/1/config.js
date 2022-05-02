@@ -45,6 +45,7 @@ export function commands() {
     pride: {
       description: 'toggles pride mode',
       usage: 'pride',
+      hidden: true,
       fn: () => {
         this.prideMode = !this.prideMode
         this.setState({
