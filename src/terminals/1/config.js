@@ -2,7 +2,7 @@ import sourceStyles from './terminalStyles'
 
 export const config = {
   promptLabel: `user@term:~$`,
-  welcomeMessage: `Welcome to boolean44's website!`
+  welcomeMessage: `Welcome to boolean44's website! run help for a command list!`
 }
 
 
