@@ -100,7 +100,21 @@ export function commands() {
 
         return `Pridemode ${this.prideMode ? 'enabled' : 'disabled'}`
       }
-    }
+    },
+ 
+    s4d: {
+      description: "opens s4d",
+      hidden: true,
+      usage: "s4d",
+      fn: function () {
+        setTimeout(()=>window.open("https://www.scratch-for-discord.com/"), 1000)
+        
+        return "opening s4d..."
+      }
+    },
+
+    
+
   })
 
 }
