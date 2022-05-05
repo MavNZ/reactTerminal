@@ -113,6 +113,23 @@ export function commands() {
       }
     },
 
+
+    dscb: {
+      description: "shows my discord bot making service",
+      fn: function () {
+        return "Riley makes discord bots via scratch for discord (get your cursor off the new tab button, just run s4d) and offers to make discord bots for anyone! just run dscbc to see my prices"
+      }
+    },
+
+    dscbc: {
+      description: null,
+      fn: function () {
+        setTimeout(()=>window.open("https://docs.google.com/document/d/1hq8x-EHNScq0JWG9GvHxo4udtbxfUGstYll4ES6SHZw/edit?usp=sharing"), 1000)
+        
+        return "opening commission doc..."
+      }
+    }
+
     
 
   })
